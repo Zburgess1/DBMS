@@ -32,9 +32,9 @@
                     <asp:TextBox ID="txtPasswordConfirm" runat="server" TextMode="Password"></asp:TextBox>
                     <asp:CompareValidator ID="cpvConfirmPassword" runat="server" ControlToCompare="txtPasswordConfirm" ControlToValidate="txtPassword" ErrorMessage="Passwords do not match." SetFocusOnError="True" ValidationGroup="ConfirmPassword"></asp:CompareValidator>
                 </div>
-                 <div class ="col-md-10">
+                 <!--<div class ="col-md-10">
                      <asp:FileUpload ID="fuProfileImage" runat="server" ClientIDMode="Static" CssClass="form-control-file" />
-                 </div>
+                 </div>-->
             </div><br />
             <div class="row">
                 <div class="col-md-12">
