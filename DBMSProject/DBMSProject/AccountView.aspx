@@ -55,9 +55,10 @@
     </div>
     </br>
     <div>
-        <asp:Label ID ="lblBook" runat="server" Text="Click Here to Search"></asp:Label>
+        <asp:Label ID ="lblBook" runat="server" Text="Navigate to:"></asp:Label>
     </div>
     <div>
-        <asp:Button ID ="bookSearch" Text= "BookSearch" runat="server" OnClick="bookSearch_Click" />
+        <asp:Button ID ="bookSearch" Text= "Book Search" runat="server" OnClick="bookSearch_Click"/>
+        <asp:Button ID ="btnOrder" Text= "Orders" runat="server" OnClick="btnOrder_Click"/>
     </div>
     </asp:Content>

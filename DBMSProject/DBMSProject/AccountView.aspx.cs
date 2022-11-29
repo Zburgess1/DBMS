@@ -119,6 +119,11 @@ namespace DBMSProject
             }
         }
 
+        protected void btnOrder_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ViewOrder.aspx");
+        }
+
         protected void txtAddress_TextChanged(object sender, EventArgs e)
         {
             address = txtAddress.Text;

@@ -2,13 +2,18 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h2>Book Search</h2>
+    <h4>Navigate to:</h4>
+    <div>
+        <asp:Button id="btnOrder" Text="Orders" runat="server" OnClick="btnOrder_Click"/>
+        <asp:Button id="btnAccount" Text="Account" runat="server" OnClick="btnAccount_Click"/>
+    </div>
     </br>
     <h4>Search</h4>
     <div>
         <asp:Textbox id="searchBox" runat="server" Height="19px" Width="496px" OnTextChanged="searchBox_TextChanged"></asp:Textbox>
     </div>
     </br>
-    <h4>Search By:</h4>
+    <h4>Click to Search By:</h4>
     <div>
         <asp:Button id="title" Text="Title" runat="server" OnClick="title_Click" />
         <asp:Button id="pubDate" Text="Publication Date (m/d/y)" runat="server" OnClick="pubDate_Click" />
