@@ -14,12 +14,15 @@ namespace DBMSProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Session["user"] == null)
+            if (!Page.IsPostBack)
             {
-                Response.Redirect("Login.aspx");
-            }
+                if (Session["user"] == null)
+                {
+                    Response.Redirect("Login.aspx");
+                }
 
-            refresh();
+                refresh();
+            }
         }
 
         protected void btnRefresh_Click(object sender, EventArgs e)
@@ -67,6 +70,60 @@ namespace DBMSProject
         protected void btnSearch_Click(object sender, EventArgs e)
         {
             Response.Redirect("BookSearch.aspx");
+        }
+
+        protected void gvOutput_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "DeleteEntry")
+            {
+                using (SqlConnection conn = new SqlConnection())
+                {
+                    conn.ConnectionString = WebConfigurationManager.ConnectionStrings["DBMSProject.Properties.Settings.BookStore"].ConnectionString;
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "DELETE FROM Orders WHERE OrderId = '" + e.CommandArgument.ToString() + "';";
+                    cmd.Connection = conn;
+                    conn.Open();
+
+                    cmd.ExecuteNonQuery();
+                    Response.Redirect("ViewOrder.aspx");
+
+                    refresh();
+                }
+            }
+            /**else if(e.CommandName == "DeleteItem")
+            {
+                using (SqlConnection conn = new SqlConnection())
+                {
+                    conn.ConnectionString = WebConfigurationManager.ConnectionStrings["DBMSProject.Properties.Settings.BookStore"].ConnectionString;
+                    SqlCommand cmd = new SqlCommand();
+                    SqlCommand cmd2 = new SqlCommand();
+                    cmd.CommandText = "DELETE FROM OrderItems WHERE ISBN = '" + e.CommandArgument.ToString() + "';";
+                    cmd2.CommandText = "UPDATE Orders SET OrderValue = (SELECT OrderValue FROM Orders WHERE OrderId = '" + e.Row";
+                    cmd.Connection = conn;
+                    cmd2.Connection = conn;
+                    conn.Open();
+
+                    cmd.ExecuteNonQuery();
+
+                    refresh();
+                }
+            }**/
+        }
+
+        protected void gvOutput_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                /**if(e.Row.FindControl("btnDeleteItem") != null){
+                    Button deleteItem = e.Row.FindControl("btnDeleteItem") as Button;
+                    deleteItem.CommandArgument = e.Row.Cells[4].Text;
+                }**/
+                if(e.Row.FindControl("btnDeleteEntry") != null)
+                {
+                    Button deleteEntry = e.Row.FindControl("btnDeleteEntry") as Button;
+                    deleteEntry.CommandArgument = e.Row.Cells[0].Text;
+                }
+            }
         }
     }
 }

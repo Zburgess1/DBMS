@@ -14,8 +14,19 @@
     </div>
     </br>
     <div>
-        <asp:GridView ID="gvOutput" CssClass="table table-striped bg-info" runat="server" AutoGenerateColumns="True">
-            
+        <asp:GridView ID="gvOutput" CssClass="table table-striped bg-info" runat="server" AutoGenerateColumns="false" OnRowCommand="gvOutput_RowCommand" OnRowDataBound="gvOutput_RowDataBound">
+            <Columns>
+                <asp:BoundField DataField="OrderId" HeaderText="OrderId" />
+                <asp:BoundField DataField="OrderValue" HeaderText="Price" />
+                <asp:BoundField DataField="OrderDate" HeaderText="Date Ordered" />
+                <asp:BoundField DataField="ItemPrice" HeaderText="Book Price" />
+                <asp:BoundField DataField="ISBN" HeaderText="ISBN" />
+                <asp:TemplateField HeaderText="Actions">
+                    <ItemTemplate>
+                            <asp:Button ID="btnDeleteEntry" runat="server" CssClass="btn btn-danger" Text="Delete Order" CommandName="DeleteEntry" CausesValidation="False"/>
+                        </ItemTemplate>
+                </asp:TemplateField>
+            </Columns>
         </asp:GridView>
     </div>
     </asp:Content>
