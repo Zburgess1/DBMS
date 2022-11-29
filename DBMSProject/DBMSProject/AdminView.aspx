@@ -10,14 +10,15 @@
         <asp:Button id="author" Text="Authors" runat="server" />
     </div>
     </br>
+    <h4>SQL Query Box</h4>
     <div>
-        <h4>SQL Query Box</h4>
         <asp:Textbox id="queryBox" runat="server" Height="19px" Width="496px"></asp:Textbox>
     </div>
     </br>
     </br>
+    <h4>Data View</h4>
     <div>
-        <h4>Data View</h4>
+    
         <asp:GridView ID="gvOutput" CssClass="table table-striped bg-info" runat="server" AutoGenerateColumns="True">
             
         </asp:GridView>
