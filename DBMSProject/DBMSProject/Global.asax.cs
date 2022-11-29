@@ -16,6 +16,7 @@ namespace DBMSProject
             // Code that runs on application startup
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            //Response.Redirect("~/Login.aspx");
         }
     }
 }
