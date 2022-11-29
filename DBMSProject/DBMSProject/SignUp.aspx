@@ -7,7 +7,7 @@
                     <asp:Label ID="lblEmail" runat="server" Text="Email"></asp:Label>
                     </div>
                 <div class="col-md-10">
-                    <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtEmail" runat="server" OnTextChanged="txtEmail_TextChanged"></asp:TextBox>
                     <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail" ErrorMessage="Invalid email address" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                     <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail" ErrorMessage="Enter an email"></asp:RequiredFieldValidator>
                 </div>
@@ -15,17 +15,29 @@
                     <asp:Label ID="lblUsername" runat="server" Text="Username"></asp:Label>
                 </div>
                 <div class="col-md-10">
-                    <asp:TextBox ID="txtUsername" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtUsername" runat="server" OnTextChanged="txtUsername_TextChanged"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvUsername" runat="server" ControlToValidate="txtUsername" ErrorMessage="Enter a username"></asp:RequiredFieldValidator>
                 </div>
+                 <div class="col-md-2">
+                    <asp:Label ID="lblFname" runat="server" Text="First Name"></asp:Label>
+                </div>
+                 <div class="col-md-10">
+                     <asp:TextBox ID="txtFname" runat="server" OnTextChanged="txtFname_TextChanged"></asp:TextBox>
+                 </div>
+                 <div class="col-md-2">
+                    <asp:Label ID="lblLname" runat="server" Text="Last Name"></asp:Label>
+                </div>
+                 <div class="col-md-10">
+                     <asp:TextBox ID="txtLname" runat="server" OnTextChanged="txtLname_TextChanged"></asp:TextBox>
+                 </div>
                 <div class="col-md-2">
                     <asp:Label ID="lblPassword" runat="server" Text="Password"></asp:Label>
                 </div>
                 <div class="col-md-10">
-                    <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox> 
+                    <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" OnTextChanged="txtPassword_TextChanged"></asp:TextBox> 
                     <asp:RequiredFieldValidator ID="rfvPassword" runat="server" ControlToValidate="txtPassword" ErrorMessage="Enter a password"></asp:RequiredFieldValidator>
                 </div>
-                <div class="col-md-2">
+                <!--<div class="col-md-2">
                     <asp:Label ID="lblPasswordconfirm" runat="server" Text="Confirm Password"></asp:Label>
                 </div>
                 <div class="col-md-10">
@@ -38,7 +50,7 @@
             </div><br />
             <div class="row">
                 <div class="col-md-12">
-                    <asp:Button ID="btnCreateProfile" runat="server" CssClass="btn btn-success" Text="Sign Up!" />
+                    <asp:Button ID="btnCreateProfile" runat="server" CssClass="btn btn-success" Text="Sign Up!" OnClick="btnCreateProfile_Click" />
                     <asp:Button ID="btnDebugTable" runat="server" Text="Show/Hide" CssClass="btn btn-secondary" CommandName="btnDebugTable_Click" CausesValidation="False" Visible="False" />
                 </div>
                  <div class ="col-md-12">
@@ -47,7 +59,7 @@
                     </div>
                 <div class ="col-md-12">
                     <br />
-                    <asp:Button ID="btnLogin" runat="server" Text="Log In!" CausesValidation="False" CssClass="btn btn-primary"/>
+                    <asp:Button ID="btnLogin" runat="server" Text="Log In!" CausesValidation="False" CssClass="btn btn-primary" OnClick="btnLogin_Click"/>
                 </div>
             </div>
                 <asp:GridView ID="gvDebugTable" runat="server" Visible="false">
