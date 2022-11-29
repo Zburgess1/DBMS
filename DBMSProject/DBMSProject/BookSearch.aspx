@@ -5,15 +5,16 @@
     </br>
     <h4>Search</h4>
     <div>
-        <asp:Textbox id="searchBox" runat="server" Height="19px" Width="496px"></asp:Textbox>
+        <asp:Textbox id="searchBox" runat="server" Height="19px" Width="496px" OnTextChanged="searchBox_TextChanged"></asp:Textbox>
     </div>
     </br>
-    <h4>Filter By:</h4>
+    <h4>Search By:</h4>
     <div>
-        <asp:Button id="title" Text="Title" runat="server" />
-        <asp:Button id="pubDate" Text="Publication Date" runat="server" />
-        <asp:Button id="category" Text="Category" runat="server" />
-        <asp:Button id="reviews" Text="Reviews" runat="server" />
+        <asp:Button id="title" Text="Title" runat="server" OnClick="title_Click" />
+        <asp:Button id="pubDate" Text="Publication Date (m/d/y)" runat="server" OnClick="pubDate_Click" />
+        <asp:Button id="category" Text="Category" runat="server" OnClick="category_Click" />
+        <asp:Button id="reviews" Text="Reviews" runat="server" OnClick="reviews_Click" />
+        <asp:Button id="btnAll" Text="All Books" runat="server" OnClick="btnAll_Click" />
     </div>
     </br>
     <h4>Results:</h4>

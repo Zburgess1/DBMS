@@ -21,32 +21,37 @@
     <h4>Change Username</h4>
     <h6>New Username</h6>
     <div>
-    <asp:Textbox id="txtNewUser" runat="server" Height="20px" Width="200px"></asp:Textbox>
+    <asp:Textbox id="txtNewUser" runat="server" Height="20px" Width="200px" OnTextChanged="txtNewUser_TextChanged"></asp:Textbox>
     </div>
     <h6>New Address</h6>
     <div>
-    <asp:Textbox id="txtAddress" runat="server" Height="20px" Width="400px"></asp:Textbox>
+    <asp:Textbox id="txtAddress" runat="server" Height="20px" Width="400px" OnTextChanged="txtAddress_TextChanged"></asp:Textbox>
     </div>
     <h6>New Phone</h6>
     <div>
-    <asp:Textbox id="txtPhone" runat="server" Height="20px" Width="200px"></asp:Textbox>
+    <asp:Textbox id="txtPhone" runat="server" Height="20px" Width="200px" OnTextChanged="txtPhone_TextChanged"></asp:Textbox>
     </div>
     <h6>New Email</h6>
     <div>
-    <asp:Textbox id="txtEmail" runat="server" Height="20px" Width="200px"></asp:Textbox>
+    <asp:Textbox id="txtEmail" runat="server" Height="20px" Width="200px" OnTextChanged="txtEmail_TextChanged"></asp:Textbox>
     </div>
     <h6>New Password</h6>
     <div>
-    <asp:Textbox id="txtPassword" runat="server" Height="20px" Width="200px"></asp:Textbox>
+    <asp:Textbox id="txtPassword" runat="server" Height="20px" Width="200px" OnTextChanged="txtPassword_TextChanged"></asp:Textbox>
     </div>
     </br>
     <h6>Click to update</h6>
     <div>
-        <asp:Button ID ="btnUpdateUsername" Text= "Update Username" runat="server" />
-        <asp:Button ID ="btnUpdateAddress" Text= "Update Address" runat="server" />
-        <asp:Button ID ="btnUpdatePhone" Text= "Update Phone" runat="server" />
-        <asp:Button ID ="btnUpdateEmail" Text= "Update Email" runat="server" />
-        <asp:Button ID ="btnUpdatePassword" Text= "Update Password" runat="server" />
+        <asp:Button ID ="btnUpdateUsername" Text= "Update Username" runat="server" OnClick="btnUpdateUsername_Click" />
+        <asp:Button ID ="btnUpdateAddress" Text= "Update Address" runat="server" OnClick="btnUpdateAddress_Click" />
+        <asp:Button ID ="btnUpdatePhone" Text= "Update Phone" runat="server" OnClick="btnUpdatePhone_Click" />
+        <asp:Button ID ="btnUpdateEmail" Text= "Update Email" runat="server" OnClick="btnUpdateEmail_Click" />
+        <asp:Button ID ="btnUpdatePassword" Text= "Update Password" runat="server" OnClick="btnUpdatePassword_Click" />
+    </div>
+    </br>
+    <h6>Make sure Phone and Address are filled before clicking</h6>
+    <div>
+        <asp:Button ID ="btnAddData" Text= "Add Data" runat="server" OnClick="btnAddData_Click"/>
     </div>
     </br>
     <div>

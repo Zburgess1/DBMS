@@ -37,7 +37,14 @@ namespace DBMSProject
                 if (sdr.Read())
                 {
                     Session["user"] = sdr["CustomerId"].ToString();
-                    Response.Redirect("AccountView.aspx");
+                    if((String)Session["user"] == "12")
+                    {
+                        Response.Redirect("AdminView.aspx");
+                    }
+                    else { 
+                        Response.Redirect("AccountView.aspx");
+                    }
+                    
                 }
                 else
                 {

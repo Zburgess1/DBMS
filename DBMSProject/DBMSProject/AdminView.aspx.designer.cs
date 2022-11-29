@@ -69,6 +69,15 @@ namespace DBMSProject
         protected global::System.Web.UI.WebControls.TextBox queryBox;
 
         /// <summary>
+        /// btnExecute control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnExecute;
+
+        /// <summary>
         /// gvOutput control.
         /// </summary>
         /// <remarks>
