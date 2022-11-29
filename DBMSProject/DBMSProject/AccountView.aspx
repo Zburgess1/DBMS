@@ -15,6 +15,9 @@
     <div>
         <asp:Label ID ="lblUsername" runat="server" Text="Username: "></asp:Label>
     </div>
+    <div>
+        <asp:Label ID ="lblPassword" runat="server" Text="Password: "></asp:Label>
+    </div>
     <h4>Change Username</h4>
     <h6>New Username</h6>
     <div>
@@ -28,5 +31,28 @@
     <div>
     <asp:Textbox id="txtPhone" runat="server" Height="20px" Width="200px"></asp:Textbox>
     </div>
-    <div><asp:Button ID ="btnUpdate" Text= "Update" runat="server" /></div>
+    <h6>New Email</h6>
+    <div>
+    <asp:Textbox id="txtEmail" runat="server" Height="20px" Width="200px"></asp:Textbox>
+    </div>
+    <h6>New Password</h6>
+    <div>
+    <asp:Textbox id="txtPassword" runat="server" Height="20px" Width="200px"></asp:Textbox>
+    </div>
+    </br>
+    <h6>Click to update</h6>
+    <div>
+        <asp:Button ID ="btnUpdateUsername" Text= "Update Username" runat="server" />
+        <asp:Button ID ="btnUpdateAddress" Text= "Update Address" runat="server" />
+        <asp:Button ID ="btnUpdatePhone" Text= "Update Phone" runat="server" />
+        <asp:Button ID ="btnUpdateEmail" Text= "Update Email" runat="server" />
+        <asp:Button ID ="btnUpdatePassword" Text= "Update Password" runat="server" />
+    </div>
+    </br>
+    <div>
+        <asp:Label ID ="lblBook" runat="server" Text="Click Here to Search"></asp:Label>
+    </div>
+    <div>
+        <asp:Button ID ="bookSearch" Text= "BookSearch" runat="server" OnClick="bookSearch_Click" />
+    </div>
     </asp:Content>

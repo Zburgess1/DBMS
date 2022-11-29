@@ -13,5 +13,10 @@ namespace DBMSProject
         {
 
         }
+
+        protected void bookSearch_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("BookSearch.aspx");
+        }
     }
 }
