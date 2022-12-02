@@ -13,6 +13,12 @@
         <asp:Textbox id="searchBox" runat="server" Height="19px" Width="496px" OnTextChanged="searchBox_TextChanged"></asp:Textbox>
     </div>
     </br>
+    <h4>Select order to add to:</h4>
+    <div>
+        <asp:DropDownList ID="orders" runat="server" Height="16px" OnSelectedIndexChanged="orders_SelectedIndexChanged" Width="238px"></asp:DropDownList>
+        <asp:Button id="newOrder" Text="Create new order" runat="server" OnClick="newOrder_Click"/>
+    </div>
+    </br>
     <h4>Click to Search By:</h4>
     <div>
         <asp:Button id="title" Text="Title" runat="server" OnClick="title_Click" />
@@ -24,8 +30,18 @@
     </br>
     <h4>Results:</h4>
     <div>
-        <asp:GridView ID="gvOutput" CssClass="table table-striped bg-info" runat="server" AutoGenerateColumns="True">
-            
+        <asp:GridView ID="gvOutput" CssClass="table table-striped bg-info" runat="server" AutoGenerateColumns="false" OnRowCommand="gvOutput_RowCommand" OnRowDataBound="gvOutput_RowDataBound">
+            <Columns>
+                <asp:BoundField DataField="ISBN" HeaderText="ISBN" />
+                <asp:BoundField DataField="Title" HeaderText="Title" />
+                <asp:BoundField DataField="Price" HeaderText="Price" />
+                <asp:BoundField DataField="PubDate" HeaderText="Publication Date" />
+                <asp:TemplateField HeaderText="Actions">
+                    <ItemTemplate>
+                            <asp:Button ID="btnAddToOrder" runat="server" CssClass="btn btn-danger" Text="Add to Order" CommandName="AddToOrder" CausesValidation="False"/>
+                        </ItemTemplate>
+                </asp:TemplateField>
+            </Columns>
         </asp:GridView>
     </div>
     </asp:Content>

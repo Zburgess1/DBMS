@@ -8,7 +8,15 @@
         <asp:Button ID ="btnSearch" Text= "Book Search" runat="server" OnClick="btnSearch_Click"/>
     </div>
     </br>
+    <div>
+        <asp:DropDownList ID="orders" runat="server" Height="16px" OnSelectedIndexChanged="orders_SelectedIndexChanged" Width="238px"></asp:DropDownList>
+        <asp:Button id="deleteOrder" Text="Delete Order" runat="server" OnClick="deleteOrder_Click"/>
+        <asp:Button id="placeOrder" Text="Place Order" runat="server" OnClick="placeOrder_Click"/>
+    </div>
     </br>
+    <div>
+        <asp:Label ID ="lblRefresh" Text= "Click to show table:" runat="server"/>
+    </div>
     <div>
         <asp:Button ID ="btnRefresh" Text= "Refresh" runat="server" OnClick="btnRefresh_Click"/>
     </div>
@@ -23,7 +31,7 @@
                 <asp:BoundField DataField="ISBN" HeaderText="ISBN" />
                 <asp:TemplateField HeaderText="Actions">
                     <ItemTemplate>
-                            <asp:Button ID="btnDeleteEntry" runat="server" CssClass="btn btn-danger" Text="Delete Order" CommandName="DeleteEntry" CausesValidation="False"/>
+                            <asp:Button ID="btnDeleteItem" runat="server" CssClass="btn btn-danger" Text="Delete Item" CommandName="DeleteItem" CausesValidation="False"/>
                         </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
