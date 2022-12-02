@@ -3,22 +3,6 @@
     <h2>Account View</h2>
  
     <h4> Account Information</h4>
-    <div>
-        <asp:Label ID ="lblEmail" runat="server" Text="Email: "></asp:Label>
-    </div>
-    <div>
-        <asp:Label ID ="lblAddress" runat="server" Text="Address: "></asp:Label>
-    </div>
-    <div>
-        <asp:Label ID ="lblPhone" runat="server" Text="Phone: "></asp:Label>
-    </div>
-    <div>
-        <asp:Label ID ="lblUsername" runat="server" Text="Username: "></asp:Label>
-    </div>
-    <div>
-        <asp:Label ID ="lblPassword" runat="server" Text="Password: "></asp:Label>
-    </div>
-    <h4>Change Username</h4>
     <h6>New Username</h6>
     <div>
     <asp:Textbox id="txtNewUser" runat="server" Height="20px" Width="200px" OnTextChanged="txtNewUser_TextChanged"></asp:Textbox>
